@@ -4,6 +4,7 @@ BUILD_DIR := build
 RESOURCE_FILE := gui.gresource.xml
 RESOURCE_C_FILE := $(BUILD_DIR)/$(RESOURCE_FILE).c
 RESOURCE_OBJ_FILE := $(BUILD_DIR)/$(RESOURCE_FILE).o
+GLADE_FILE := $(SRC_DIR)/gui.glade
 
 
 SRCS := $(shell find $(SRC_DIR) -name *.cpp)
@@ -27,7 +28,7 @@ $(BUILD_DIR)/$(TARGET_EXEC): $(OBJS) $(RESOURCE_OBJ_FILE)
 $(RESOURCE_OBJ_FILE): $(RESOURCE_C_FILE)
 	$(CXX) $(shell pkg-config glib-2.0 --cflags) -c $< -o $@
 
-$(RESOURCE_C_FILE):
+$(RESOURCE_C_FILE): $(GLADE_FILE)
 	glib-compile-resources --target=$@ --generate-source $(SRC_DIR)/$(RESOURCE_FILE)
 
 $(BUILD_DIR)/%.cpp.o: $(SRC_DIR)/%.cpp
