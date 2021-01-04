@@ -36,8 +36,8 @@ $(BUILD_DIR)/%.cpp.o: $(SRC_DIR)/%.cpp
 
 .PHONEY: clean
 clean:
-	@echo "Removing build directory..."
-	@rm -rf $(BUILD_DIR) $(TARGET_EXEC)
+	@echo "Removing build directory, target symlink, & output files..."
+	@rm -rf $(BUILD_DIR) $(TARGET_EXEC) output.yaml
 	@echo "Done!"
 
 
