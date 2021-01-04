@@ -103,12 +103,12 @@
             <property name="spacing">10</property>
             <property name="homogeneous">True</property>
             <child>
-              <object class="GtkButton" id="btn_close">
-                <property name="label" translatable="yes">Close</property>
+              <object class="GtkButton" id="btn_save">
+                <property name="label" translatable="yes">Save	</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
-                <signal name="clicked" handler="on_button_close" swapped="no"/>
+                <signal name="clicked" handler="on_button_save" swapped="no"/>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -117,12 +117,12 @@
               </packing>
             </child>
             <child>
-              <object class="GtkButton" id="btn_save">
-                <property name="label" translatable="yes">Save	</property>
+              <object class="GtkButton" id="btn_close">
+                <property name="label" translatable="yes">Close</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
-                <signal name="clicked" handler="on_button_save" swapped="no"/>
+                <signal name="clicked" handler="on_button_close" swapped="no"/>
               </object>
               <packing>
                 <property name="expand">False</property>
